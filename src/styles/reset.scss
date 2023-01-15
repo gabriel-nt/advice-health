@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--bs-gray);
+}
+
+p {
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  opacity: 0.7;
+  border-radius: 4px;
+  background-color: var(--bs-gray-200);
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  &.error:focus,
+  &.error:hover {
+    box-shadow: var(--bs-danger) 0px 0px 0px 1px;
+  }
+
+  &:not(.error):focus,
+  &:not(.error):hover {
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: var(--bs-primary) 0px 0px 0px 1px;
+  }
+}

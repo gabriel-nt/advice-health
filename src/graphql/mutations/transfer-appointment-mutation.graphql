@@ -1,0 +1,24 @@
+mutation TransferAppointment(
+  $id: ID
+  $doctorId: ID
+  $endTimeInMinutes: Int
+  $startTimeInMinutes: Int
+  $eventDate: Date
+) {
+  updateAppointment(
+    data: {
+      eventDate: $eventDate
+      endTimeInMinutes: $endTimeInMinutes
+      startTimeInMinutes: $startTimeInMinutes
+    }
+    where: { id: $id }
+  ) {
+    id
+  }
+  publishAppointment(where: { id: $id }, to: PUBLISHED) {
+    id
+  }
+  publishDoctor(where: { id: $doctorId }, to: PUBLISHED) {
+    id
+  }
+}

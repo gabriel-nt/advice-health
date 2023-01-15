@@ -1,0 +1,9 @@
+query GetDoctors {
+  doctors(orderBy: createdAt_DESC) {
+    id
+    name
+    bio
+    avatarURL
+    createdAt
+  }
+}

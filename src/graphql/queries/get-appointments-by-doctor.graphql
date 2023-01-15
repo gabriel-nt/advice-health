@@ -1,0 +1,15 @@
+query GetAppointmentsByDoctor($eventDate: Date, $doctorId: ID) {
+  appointments(where: { eventDate: $eventDate, doctor: { id: $doctorId } }) {
+    id
+    eventDate
+    patientName
+    patientPhone
+    patientDocument
+    patientBirthday
+    endTimeInMinutes
+    startTimeInMinutes
+    doctor {
+      id
+    }
+  }
+}

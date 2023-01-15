@@ -1,0 +1,19 @@
+query GetAppointmentById($id: ID) {
+  appointment(where: { id: $id }) {
+    billingAmount
+    description
+    endTimeInMinutes
+    eventDate
+    patientAddress
+    patientBirthday
+    patientDocument
+    patientEmail
+    patientName
+    patientPhone
+    paymentMethod
+    startTimeInMinutes
+    doctor {
+      id
+    }
+  }
+}

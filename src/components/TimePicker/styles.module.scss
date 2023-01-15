@@ -1,0 +1,21 @@
+.timePickerItem {
+  border: 0;
+  background: var(--bs-gray-400);
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  color: var(--bs-gray);
+  max-width: 110px;
+  font-weight: 500;
+
+  &:disabled {
+    background: none;
+    cursor: default;
+    opacity: 0.7;
+  }
+
+  &:hover {
+    background: var(--bs-gray-200)
+  }
+}

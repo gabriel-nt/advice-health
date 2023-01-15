@@ -1,0 +1,91 @@
+.calendarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendarTitle {
+  font-weight: 500;
+  text-transform: capitalize;
+
+  span {
+    color: var(--bs-gray);
+  }
+}
+
+.calendarActions {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--bs-gray-500);
+
+  button {
+    all: unset;
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 4px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      color: var(--bs-gray);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--bs-white);
+    }
+  }
+}
+
+.calendarBody {
+  width: 100%;
+  border-spacing: 0.25rem;
+  table-layout: fixed;
+  border-collapse: separate;
+
+  thead th {
+    color: var(--bs-gray-700);
+    font-size: 0.875rem;
+  };
+
+  tbody:before {
+    content: ".";
+    display: block;
+    color: transparent;
+    line-height: 0.75rem;
+  };
+
+  tbody td {
+    box-sizing: border-box;
+  };
+}
+
+.calendarDay {
+  all: unset;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bs-gray-200);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:disabled {
+    background: none;
+  };
+
+  &:not(:disabled):hover {
+    background: var(--bs-gray-100)
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--bs-white);
+  }
+}

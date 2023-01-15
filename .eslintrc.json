@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "ignorePatterns": ["vite.config.ts"],
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "import/no-cycle": "off",
+    "react/jsx-filename-extension": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/camelcase": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react/require-default-props": "off",
+    "react/function-component-definition": "off",
+    "react/prop-types": "off",
+    "react/jsx-no-bind": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "import/no-unresolved": "off",
+    "import/no-duplicates": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": "warn",
+    "prettier/prettier": "error",
+    "prefer-arrow-callback": "off",
+    "no-nested-ternary": "warn",
+    "no-param-reassign": ["error", { "props": false }],
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"]
+}

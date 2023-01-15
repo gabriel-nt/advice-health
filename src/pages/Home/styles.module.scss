@@ -1,0 +1,64 @@
+.searchBox {
+  position: relative;
+  margin-bottom: 1rem;
+
+  svg {
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    position: absolute;
+  }
+}
+
+.tableListContainer {
+  max-height: 400px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: rgba(0, 0, 0, 0.09);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.doctorStack {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: rgba(0, 0, 0, 0.09);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}

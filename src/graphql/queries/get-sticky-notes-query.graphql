@@ -1,0 +1,25 @@
+query GetStickyNotes($skip: Int, $initialDate: DateTime, $finalDate: DateTime) {
+  stickyNotes(
+    skip: $skip
+    first: 5
+    where: { createdAt_lte: $finalDate, createdAt_gte: $initialDate }
+  ) {
+    id
+    description
+    createdAt
+    doctor {
+      name
+    }
+    appointment {
+      patientName
+      createdAt
+    }
+  }
+  stickyNotesConnection(
+    where: { createdAt_lte: $finalDate, createdAt_gte: $initialDate }
+  ) {
+    aggregate {
+      count
+    }
+  }
+}

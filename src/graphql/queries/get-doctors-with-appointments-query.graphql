@@ -1,0 +1,12 @@
+query GetDoctorsWithAppointments($eventDate: Date) {
+  doctors(
+    orderBy: createdAt_DESC
+    where: { appointments_some: { eventDate: $eventDate } }
+  ) {
+    id
+    bio
+    name
+    avatarURL
+    createdAt
+  }
+}

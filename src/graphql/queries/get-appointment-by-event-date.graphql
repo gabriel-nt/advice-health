@@ -1,0 +1,15 @@
+query GetAppointmentByEventDate(
+  $eventDate: Date
+  $startTimeInMinutes: Int
+  $doctorId: ID
+) {
+  appointments(
+    where: {
+      eventDate: $eventDate
+      startTimeInMinutes: $startTimeInMinutes
+      doctor: { id: $doctorId }
+    }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,11 @@
+mutation DeleteAppointment($id: ID, $doctorId: ID) {
+  deleteAppointment(where: { id: $id }) {
+    id
+  }
+  unpublishAppointment(where: { id: $id }) {
+    id
+  }
+  publishDoctor(where: { id: $doctorId }, to: PUBLISHED) {
+    id
+  }
+}

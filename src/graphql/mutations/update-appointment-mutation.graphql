@@ -1,0 +1,46 @@
+mutation UpdateAppointment(
+  $id: ID
+  $doctorId: ID
+  $endTimeInMinutes: Int!
+  $startTimeInMinutes: Int!
+  $eventDate: Date!
+  $patientName: String!
+  $patientDocument: String!
+  $patientAddress: String!
+  $patientPhone: String!
+  $patientEmail: String!
+  $description: String
+  $paymentMethod: String!
+  $billingAmount: Float!
+) {
+  updateAppointment(
+    data: {
+      doctor: {
+        update: {
+          where: { id: $doctorId }
+          data: { appointments: { connect: { where: { id: $id } } } }
+        }
+      }
+      billingAmount: $billingAmount
+      description: $description
+      endTimeInMinutes: $endTimeInMinutes
+      eventDate: $eventDate
+      patientAddress: $patientAddress
+      patientDocument: $patientDocument
+      patientEmail: $patientEmail
+      patientName: $patientName
+      patientPhone: $patientPhone
+      paymentMethod: $paymentMethod
+      startTimeInMinutes: $startTimeInMinutes
+    }
+    where: { id: $id }
+  ) {
+    id
+  }
+  publishAppointment(where: { id: $id }, to: PUBLISHED) {
+    id
+  }
+  publishDoctor(where: { id: $doctorId }, to: PUBLISHED) {
+    id
+  }
+}

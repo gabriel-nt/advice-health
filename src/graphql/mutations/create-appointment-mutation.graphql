@@ -1,0 +1,46 @@
+mutation CreateAppointment(
+  $doctorId: ID
+  $endTimeInMinutes: Int!
+  $startTimeInMinutes: Int!
+  $eventDate: Date!
+  $patientName: String!
+  $patientDocument: String!
+  $patientAddress: String!
+  $patientPhone: String!
+  $patientEmail: String!
+  $patientBirthday: Date!
+  $description: String
+  $paymentMethod: String!
+  $billingAmount: Float!
+) {
+  createAppointment(
+    data: {
+      patientName: $patientName
+      patientDocument: $patientDocument
+      patientAddress: $patientAddress
+      patientPhone: $patientPhone
+      patientEmail: $patientEmail
+      startTimeInMinutes: $startTimeInMinutes
+      endTimeInMinutes: $endTimeInMinutes
+      patientBirthday: $patientBirthday
+      eventDate: $eventDate
+      billingAmount: $billingAmount
+      description: $description
+      paymentMethod: $paymentMethod
+      doctor: { connect: { id: $doctorId } }
+    }
+  ) {
+    id
+  }
+  publishManyAppointments(
+    where: {
+      doctor: { id: $doctorId }
+      startTimeInMinutes: $startTimeInMinutes
+    }
+  ) {
+    count
+  }
+  publishDoctor(where: { id: $doctorId }, to: PUBLISHED) {
+    id
+  }
+}

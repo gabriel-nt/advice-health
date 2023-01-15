@@ -1,0 +1,18 @@
+.paginationActions {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--bs-gray-500);
+
+  button {
+    all: unset;
+    line-height: 0;
+
+    &:hover {
+      color: var(--bs-gray);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--bs-white);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+query GetAppointments($skip: Int, $search: String) {
+  appointments(
+    skip: $skip
+    first: 5
+    where: { _search: $search }
+    orderBy: eventDate_DESC
+  ) {
+    id
+    patientName
+    eventDate
+    startTimeInMinutes
+    doctor {
+      name
+    }
+    paymentMethod
+    billingAmount
+  }
+  appointmentsConnection {
+    aggregate {
+      count
+    }
+  }
+}
