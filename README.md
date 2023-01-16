@@ -78,7 +78,7 @@ $ yarn or npm i
 $ yarn dev or npm run dev
 
 # Executar a aplicação de produção
-$ yarn start or npm run start
+$ yarn preview or npm run preview
 ```
 
 ### 📘 Testes
