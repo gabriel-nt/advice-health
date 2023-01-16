@@ -1,5 +1,5 @@
-import * as yup from 'yup'
 import dayjs from 'dayjs'
+import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Col, Row, Form, Button } from 'react-bootstrap'
@@ -8,8 +8,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CalendarCheck, MapPinLine, UserCirclePlus } from 'phosphor-react'
 
 import {
-  useCreateAppointmentMutation,
   useGetDoctorsQuery,
+  useCreateAppointmentMutation,
 } from '../../graphql/generated'
 
 import styles from './styles.module.scss'
@@ -34,7 +34,12 @@ const createAppointmentSchema = yup.object({
   description: yup.string(),
   patient: yup.object({
     name: yup.string().required(),
-    birthday: yup.date().required(),
+    birthday: yup
+      .date()
+      .test('invalid date', 'Data inválida', (value) =>
+        dayjs(value).isAfter(new Date('1930-01-01')),
+      )
+      .required(),
     document: yup
       .string()
       .test('invalid document', 'CPF inválido', (value) =>
