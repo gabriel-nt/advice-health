@@ -14,7 +14,7 @@ export function ToastContainer({ messages }: ToastContainerProps) {
       {messages.map((item) => {
         setTimeout(() => {
           removeToast(item.id)
-        }, 5000)
+        }, 8000)
 
         return (
           <Toast className="d-inline-block m-1" bg={item.type} key={item.id}>

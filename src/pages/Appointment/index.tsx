@@ -180,9 +180,7 @@ export function Appointment() {
           description: 'Vc será redirecionado para a tela de consultas.',
         })
 
-        setTimeout(() => {
-          navigate('/consultas')
-        }, 3000)
+        navigate('/consultas')
       } catch (error) {
         addToast({
           type: 'danger',
@@ -207,7 +205,9 @@ export function Appointment() {
           'DD/MM/YYYY',
         ),
         patientDocument: cpfMask(appointment.patientDocument),
-        billingAmount: moneyMask(String(appointment.billingAmount / 60)),
+        billingAmount: moneyMask(
+          String((appointment.billingAmount * 100) / 60),
+        ),
       })
     }
   }, [appointmentData, reset])

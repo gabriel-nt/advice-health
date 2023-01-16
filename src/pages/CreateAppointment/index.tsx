@@ -217,9 +217,7 @@ export function CreateAppointment() {
           description: 'Vc será redirecionado para a tela de consultas.',
         })
 
-        setTimeout(() => {
-          navigate('/consultas')
-        }, 3000)
+        navigate('/consultas')
       } catch (error) {
         addToast({
           type: 'danger',
