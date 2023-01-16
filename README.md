@@ -41,12 +41,15 @@
   - [x] Atualizar e excluir agendamento
 
 ### 📖 Next Features
-
 - [ ] Busca geral
 - [ ] Página de login e logout
 - [ ] Página de gerenciamento de consultórios
 - [ ] Página de gerenciamento de médicos
 - [ ] Adicionar funcionalide de realtime nos gráficos
+
+### 🛠 Próximas Melhorias Técnicas
+- [ ] Adição do storybook dos componentes
+- [ ] Adição de testes unitários (JEST) e testes E2E (Cypress) na aplicação
 
 ### ✅ Demonstração
 
