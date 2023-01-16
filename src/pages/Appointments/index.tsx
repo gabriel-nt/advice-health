@@ -5,10 +5,9 @@ import { FormEvent, useEffect, useMemo, useState } from 'react'
 import { Row, Col, Form, Button, Spinner } from 'react-bootstrap'
 import { Funnel, MagnifyingGlass, PencilSimple, X } from 'phosphor-react'
 
+import styles from './styles.module.scss'
 import { TableList } from '../../components/TableList'
 import { useGetAppointmentsQuery } from '../../graphql/generated'
-
-import styles from './styles.module.scss'
 
 enum PaymentMethodEnum {
   cash = 'Dinheiro',
@@ -76,7 +75,7 @@ export function Appointments() {
           ),
         }),
       ),
-    [data],
+    [data, navigate],
   )
 
   const appointmentsTotalPages = Math.ceil(
@@ -89,8 +88,6 @@ export function Appointments() {
 
   function handleSearchAppointment(e: FormEvent) {
     e.preventDefault()
-
-    setAuxSearch('')
     setSearch(auxSearch)
     setSkipAppointmentsList(0)
   }
