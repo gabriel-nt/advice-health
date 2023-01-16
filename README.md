@@ -50,7 +50,7 @@
 
 ### ✅ Demonstração
 
-<img src="https://github.com/gabriel-nt/advice-health/tree/master/public/github/thumbnail.png" alt="Thumbail"/>
+<img src="https://github.com/gabriel-nt/advice-health/blob/master/public/github/thumbnail.png" alt="Thumbail"/>
 
 ### ⚙ Pré-requisitos
 
