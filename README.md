@@ -84,7 +84,7 @@ Como a aplicação está consumindo um GraphQL API, vale ressaltar os seguintes 
 
 - Para visualizar a Lista de Lembretes, basta filtrar pelo dia 15/01/2023
 - Para visualizar a Lista de Médicos com Consulta no dia X, basta filtrar pelo dia 18/01/2023
-- Para visualizar a agenda, foi criado três registros que podem ser filtrados pelo dia 18/01/2024 e escolher o médico Callie Torres.
+- Para visualizar a agenda, foi criado três registros que podem ser filtrados pelo dia 18/01/2023 e escolher o médico Callie Torres.
 - Podem adicionar, remover, transferir e/ou atualizar qualquer agendamento.
 
 *Obs: Adicionado a integração com o GraphQL para permitir uma boa interação com a aplicação.
