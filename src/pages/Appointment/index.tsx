@@ -206,7 +206,7 @@ export function Appointment() {
         ),
         patientDocument: cpfMask(appointment.patientDocument),
         billingAmount: moneyMask(
-          String((appointment.billingAmount * 100) / 60),
+          String(((appointment.billingAmount * 100) / 60).toFixed(2)),
         ),
       })
     }
