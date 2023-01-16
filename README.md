@@ -40,7 +40,7 @@
   - [x] Campo de busca para filtrar os agendamentos
   - [x] Atualizar e excluir agendamento
 
-### 🛢 Next Features
+### 📖 Next Features
 
 - [ ] Busca geral
 - [ ] Página de login e logout
@@ -84,6 +84,18 @@ Como a aplicação está consumindo um GraphQL API, vale ressaltar os seguintes 
 - Podem adicionar, remover, transferir e/ou atualizar qualquer agendamento.
 
 *Obs: Adicionado a integração com o GraphQL para permitir uma boa interação com a aplicação.
+
+### 🛢 GraphQL Schemas
+Para permitir as interações com a aplicação, foi utilizado a API do [Hygraph](https://hygraph.com/), onde, apartir de um plano gratuito (muito bom, por sinal), podemos criar nossos "schemas" e realizar diversas chamados de pesquisa (queries) e de alteração (mutations). Sendo assim, para aplicação, foram utilizadas os seguintes schemas:
+
+- [x] Appointment
+  - Possui os campos de valor de cobrança, método de pagamento, hora de ínicio e fim da consulta, dia da consulta, breve descrição, dados do paciente e médico responsável pela consulta
+- [x] Doctor
+  - Possui os campos de nome, biografia, avatar e appointments (consultas) relacionadas com o mesmo
+- [x] Sticky Notes
+  - Possui os campos de descrição, e o relacionamento entre o médido e a consulta
+
+*OBS: Para API Request, podemos utilizar o React Query (Cache das requests) + axios
 
 ### 🚀 Tecnologias
 
