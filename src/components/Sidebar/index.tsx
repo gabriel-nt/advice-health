@@ -1,17 +1,17 @@
 import clsx from 'clsx'
 import { Nav } from 'react-bootstrap'
-import { Calendar, CalendarPlus, House, SignOut } from 'phosphor-react'
-
 import { useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { Calendar, CalendarPlus, House, SignOut } from 'phosphor-react'
+
 import styles from './styles.module.scss'
 import { useMenuContext } from '../../contexts/MenuContext'
 
 export function Sidebar() {
   const { pathname } = useLocation()
+  const { isOpen, onCloseMenu } = useMenuContext()
 
   const sidebarRef = useRef<HTMLDivElement | null>(null)
-  const { isOpen, onCloseMenu } = useMenuContext()
 
   useEffect(() => {
     if (sidebarRef.current) {
@@ -28,7 +28,7 @@ export function Sidebar() {
         [styles.sidebarOpen]: isOpen,
       })}
     >
-      <Nav activeKey="/home" className={styles.nav}>
+      <Nav activeKey="/" className={styles.nav}>
         <Nav.Item
           className={clsx(styles.navItem, {
             'text-primary': pathname === '/',
@@ -55,7 +55,7 @@ export function Sidebar() {
         </Nav.Item>
         <Nav.Item
           className={clsx(styles.navItem, {
-            'text-primary': pathname === '/consultas',
+            'text-primary': pathname.indexOf('consultas') !== -1,
           })}
           as={Link}
           to="/consultas"
