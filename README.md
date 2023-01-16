@@ -38,7 +38,10 @@
   - [x] Criar agendamento
 - [x] Listagem das consultas
   - [x] Campo de busca para filtrar os agendamentos
-  - [x] Atualizar e excluir agendamento
+  - [x] Acessar a página de detalhes de um agendamento
+- [x] Página de detalhes 
+  - [x] Atualizar agendamento
+  - [x] Excluir agendamento
 
 ### 📖 Próximas funcionalidades
 - [ ] Busca geral
