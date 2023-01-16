@@ -86,7 +86,7 @@ export function ScheduleItem({
       <h6>{startTimeInHours}</h6>
 
       <div className={styles.appointmentInfo}>
-        {disabled && <strong>Horário não habilitado</strong>}
+        {disabled && <strong>Horário de almoço</strong>}
         {!disabled && !data && <strong>Horário livre</strong>}
         {data && (
           <>
