@@ -43,15 +43,16 @@
 ### 📖 Próximas funcionalidades
 - [ ] Busca geral
 - [ ] Página de login e logout
-- [ ] Página de gerenciamento de consultórios
+- [ ] Consulta de validação de CEP
 - [ ] Página de gerenciamento de médicos
+- [ ] Página de gerenciamento de consultórios
 - [ ] Adicionar funcionalide de realtime nos gráficos
 
 ### 🛠 Próximas Melhorias Técnicas
 - [ ] Adição do storybook dos componentes
 - [ ] Adição de testes unitários (JEST) e testes E2E (Cypress) na aplicação
 
-### ✅ Demonstração
+### 💻 Demonstração
 
 <img src="https://github.com/gabriel-nt/advice-health/blob/master/public/github/thumbnail.png" alt="Thumbail"/>
 
@@ -82,7 +83,7 @@ $ yarn start or npm run start
 Como a aplicação está consumindo um GraphQL API, vale ressaltar os seguintes detalhes:
 
 - Para visualizar a Lista de Lembretes, basta filtrar pelo dia 15/01/2023
-- Para visualizar a Lista de Médicos com Consulta no dia X, basta filtrar pelo dia 15/01/2023
+- Para visualizar a Lista de Médicos com Consulta no dia X, basta filtrar pelo dia 18/01/2023
 - Para visualizar a agenda, foi criado três registros que podem ser filtrados pelo dia 18/01/2024 e escolher o médico Callie Torres.
 - Podem adicionar, remover, transferir e/ou atualizar qualquer agendamento.
 
