@@ -1,27 +1,29 @@
 import * as yup from 'yup'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
-import { useLocation, useNavigate } from 'react-router-dom'
+import dayjs from 'dayjs'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { FormProvider, useForm } from 'react-hook-form'
 import { Col, Row, Form, Button } from 'react-bootstrap'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CalendarCheck, MapPinLine, UserCirclePlus } from 'phosphor-react'
 
-import dayjs from 'dayjs'
-import styles from './styles.module.scss'
-import { InputField } from '../../components/InputField'
-import { phoneMask } from '../../utils/phoneMask'
-import { cpfMask } from '../../utils/cpfMask'
-import { zipCodeMask } from '../../utils/zipCodeMask'
-import { dateMask } from '../../utils/dateMask'
-import { moneyMask } from '../../utils/moneyMask'
 import {
   useCreateAppointmentMutation,
   useGetDoctorsQuery,
 } from '../../graphql/generated'
-import { SelectEventDateModal } from '../../components/SelectEventDateModal'
+
+import styles from './styles.module.scss'
+import { cpfMask } from '../../utils/cpfMask'
+import { dateMask } from '../../utils/dateMask'
+import { phoneMask } from '../../utils/phoneMask'
+import { moneyMask } from '../../utils/moneyMask'
+import { zipCodeMask } from '../../utils/zipCodeMask'
 import { useToast } from '../../contexts/ToastContext'
+import { validateCPF } from '../../utils/cpfValidator'
+import { InputField } from '../../components/InputField'
 import { getMoneyInCents } from '../../utils/getMoneyInCents'
 import { getDateUsLocale } from '../../utils/getDateUsLocale'
+import { SelectEventDateModal } from '../../components/SelectEventDateModal'
 
 const createAppointmentSchema = yup.object({
   eventDate: yup.date().required(),
@@ -33,7 +35,12 @@ const createAppointmentSchema = yup.object({
   patient: yup.object({
     name: yup.string().required(),
     birthday: yup.date().required(),
-    document: yup.string().required(),
+    document: yup
+      .string()
+      .test('invalid document', 'CPF inválido', (value) =>
+        value ? validateCPF(value) : false,
+      )
+      .required(),
     email: yup.string().email().required(),
     phone: yup.string().required(),
   }),

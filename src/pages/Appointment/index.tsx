@@ -8,8 +8,8 @@ import { Col, Row, Form, Button } from 'react-bootstrap'
 import { CalendarCheck, Trash, UserCirclePlus } from 'phosphor-react'
 
 import {
-  useGetAppointmentByIdQuery,
   useGetDoctorsQuery,
+  useGetAppointmentByIdQuery,
   useUpdateAppointmentMutation,
 } from '../../graphql/generated'
 
@@ -18,6 +18,7 @@ import { cpfMask } from '../../utils/cpfMask'
 import { moneyMask } from '../../utils/moneyMask'
 import { phoneMask } from '../../utils/phoneMask'
 import { useToast } from '../../contexts/ToastContext'
+import { validateCPF } from '../../utils/cpfValidator'
 import { InputField } from '../../components/InputField'
 import { getMoneyInCents } from '../../utils/getMoneyInCents'
 import { SelectEventDateModal } from '../../components/SelectEventDateModal'
@@ -32,7 +33,12 @@ const updateAppointmentSchema = yup.object({
   description: yup.string().optional(),
   patientName: yup.string().required(),
   patientBirthday: yup.string().required(),
-  patientDocument: yup.string().required(),
+  patientDocument: yup
+    .string()
+    .test('invalid document', 'CPF inválido', (value) =>
+      value ? validateCPF(value) : false,
+    )
+    .required(),
   patientEmail: yup.string().email().required(),
   patientPhone: yup.string().required(),
   patientAddress: yup.string().required(),
