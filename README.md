@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-funcionalidades">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-pré-requisitos">Pré-Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-licença">Lincença</a>
@@ -25,7 +25,7 @@
 🚧  Em Desenvolvimento  🚧
 </h3>
 
-### 📎 Features
+### 📎 Funcionalidades
 
 - [x] Página Inicial
   - [x] Gráfico de consultas (offline)
@@ -40,7 +40,7 @@
   - [x] Campo de busca para filtrar os agendamentos
   - [x] Atualizar e excluir agendamento
 
-### 📖 Next Features
+### 📖 Próximas funcionalidades
 - [ ] Busca geral
 - [ ] Página de login e logout
 - [ ] Página de gerenciamento de consultórios
