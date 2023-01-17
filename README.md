@@ -49,7 +49,7 @@
 - [ ] Consulta de validação de CEP
 - [ ] Página de gerenciamento de médicos
 - [ ] Página de gerenciamento de consultórios
-- [ ] Adicionar funcionalide de realtime nos gráficos
+- [ ] Adicionar funcionalidade de "realtime" nos gráficos
 
 ### 🛠 Próximas Melhorias Técnicas
 - [ ] Adição do storybook dos componentes
