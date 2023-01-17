@@ -86,7 +86,7 @@ export function SelectEventDateModal({
   }, [handleSelectEventDate, selectedStartTime])
 
   return (
-    <Modal show={isOpen} onHide={onCloseModal} centered>
+    <Modal show={isOpen} onHide={handleCloseModal} centered>
       <Modal.Header closeButton>
         <Modal.Title className="h6">
           Selecione {!selectedDate ? 'uma data' : 'um horário'} para a consulta:

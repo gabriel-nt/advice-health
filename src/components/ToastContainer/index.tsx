@@ -10,7 +10,7 @@ export function ToastContainer({ messages }: ToastContainerProps) {
   const { removeToast } = useToast()
 
   return (
-    <BsToastContainer position="top-end" className="p-3">
+    <BsToastContainer position="top-end" className="p-3 d-flex flex-column">
       {messages.map((item) => {
         setTimeout(() => {
           removeToast(item.id)

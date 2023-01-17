@@ -43,7 +43,17 @@
     "prefer-arrow-callback": "off",
     "no-nested-ternary": "warn",
     "no-param-reassign": ["error", { "props": false }],
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/.storybook/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ]
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"]
 }

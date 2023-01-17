@@ -125,7 +125,7 @@ export function TransferAppointmentModal({
   ])
 
   return (
-    <Modal show={isOpen} onHide={onCloseModal} centered>
+    <Modal show={isOpen} onHide={handleCloseModal} centered>
       <Modal.Header className="border-0 mb-0">
         <Modal.Title className="h5">Transferir agendamento</Modal.Title>
       </Modal.Header>

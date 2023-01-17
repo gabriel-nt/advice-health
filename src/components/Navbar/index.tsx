@@ -35,7 +35,7 @@ export function Navbar() {
       <div className="d-flex justify-content-between w-100 align-items-center">
         <BsNavbar.Text className={styles.brand} as="div">
           <BsNavbar.Brand>
-            <Image src={logoImg} />
+            <Image src={logoImg} alt="admin user image" />
           </BsNavbar.Brand>
           <h5>Advice Health</h5>
         </BsNavbar.Text>
