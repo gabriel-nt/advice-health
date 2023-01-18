@@ -37,7 +37,7 @@ export function Navbar() {
           <BsNavbar.Brand>
             <Image src={logoImg} alt="admin user image" />
           </BsNavbar.Brand>
-          <h5>Advice Health</h5>
+          <h5>Health App</h5>
         </BsNavbar.Text>
         <Nav className={styles.profile}>
           <Image
