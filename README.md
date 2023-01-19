@@ -6,7 +6,7 @@
     🚀 Health App
 </h1>
 
-<p align="center">Backoffice da HealthApp</p>
+<p align="center">Aplicação sobre sistema de saúde</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/react%20version-18.2.0-informational"/>
